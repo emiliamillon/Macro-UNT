@@ -1,4 +1,4 @@
-# Principios de Economía II · FCE · UNT
+# Principios de Economía II · FACE · UNT
 
 Página de la materia: diapositivas, guías de estudio y material del cursado.
 
