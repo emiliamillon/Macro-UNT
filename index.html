@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Principios de Economía II · FCE · UNT</title>
+<meta name="description" content="Diapositivas, guías de estudio y material de la materia Principios de Economía II (Macroeconomía), FCE, UNT.">
+<style>
+  :root {
+    --navy: #17324D; --ink: #23303B; --orange: #E8590C; --teal: #1A8C7E; --gray: #6B7785;
+    --line: #E2DDD0; --peach: #F4A261; --bg: #F6F3EC; --white: #FFFFFF; --sand: #EFE9DC;
+    --head: Georgia, "Times New Roman", serif;
+    --body: Calibri, Carlito, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; border-left: 6px solid var(--teal); }
+  a { color: var(--teal); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* Encabezado */
+  header.hero { background: var(--navy); color: var(--white); padding: 56px 0 48px; }
+  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); margin: 0 0 10px; }
+  header.hero h1 { font-family: var(--head); font-size: clamp(34px, 5vw, 52px); line-height: 1.1; margin: 0 0 14px; }
+  header.hero p.lead { font-size: 19px; color: #E6ECF2; max-width: 680px; margin: 0 0 22px; }
+  .rule { width: 72px; height: 4px; background: var(--orange); margin: 0 0 18px; }
+  .who { font-size: 15px; color: #A9B6C4; margin: 0; }
+  .who strong { color: var(--white); }
+  nav.top { position: sticky; top: 0; z-index: 5; background: var(--white); border-bottom: 1px solid var(--line); }
+  nav.top .wrap { display: flex; gap: 22px; overflow-x: auto; padding-top: 12px; padding-bottom: 12px; }
+  nav.top a { text-decoration: none; color: var(--navy); font-weight: 700; font-size: 15px; white-space: nowrap; }
+  nav.top a:hover { color: var(--orange); }
+
+  /* Secciones */
+  section { padding: 48px 0 8px; }
+  h2 { font-family: var(--head); color: var(--navy); font-size: 30px; margin: 0 0 6px; }
+  .sub { color: var(--gray); margin: 0 0 26px; }
+  .bloque { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); margin: 28px 0 12px; }
+
+  /* Tarjetas de temas */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+  .card { background: var(--white); border: 1px solid var(--line); border-top: 6px solid var(--teal); padding: 20px 20px 18px; display: flex; flex-direction: column; }
+  .card.soon { border-top-color: var(--line); opacity: .72; }
+  .card .num { font-family: var(--head); font-weight: 700; font-size: 34px; line-height: 1; color: var(--orange); margin-bottom: 8px; }
+  .card.soon .num { color: var(--gray); }
+  .card h3 { font-size: 19px; color: var(--navy); margin: 0 0 8px; line-height: 1.25; }
+  .card p { font-size: 15px; margin: 0 0 14px; color: var(--ink); }
+  .tag { align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; background: var(--sand); color: var(--gray); margin-top: auto; }
+  .card a.more { margin-top: auto; font-weight: 700; text-decoration: none; }
+
+  /* Detalle de cada tema */
+  .tema { background: var(--white); border: 1px solid var(--line); margin: 0 0 28px; }
+  .tema-head { background: var(--navy); color: var(--white); padding: 26px 28px; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; }
+  .tema-head .num { font-family: var(--head); font-size: 52px; font-weight: 700; color: var(--orange); line-height: .9; }
+  .tema-head h3 { font-family: var(--head); font-size: 26px; margin: 0 0 8px; line-height: 1.2; }
+  .tema-head p { margin: 0; color: #E6ECF2; font-size: 16px; }
+  .tema-body { padding: 24px 28px 28px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; }
+  .tema-body h4 { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); margin: 0 0 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--teal); color: var(--white); text-decoration: none; font-weight: 700; padding: 12px 18px; border-radius: 3px; }
+  .btn:hover { background: var(--navy); }
+  .btn svg { width: 18px; height: 18px; fill: currentColor; }
+  .note { font-size: 14px; color: var(--gray); margin: 12px 0 0; }
+  ol.clases { list-style: none; margin: 0; padding: 0; counter-reset: c; }
+  ol.clases li { counter-increment: c; border: 1px solid var(--line); margin-bottom: 10px; }
+  ol.clases a { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 12px; padding: 12px 14px; text-decoration: none; color: var(--navy); font-weight: 700; }
+  ol.clases a::before { content: counter(c); display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--teal); color: var(--white); font-size: 15px; }
+  ol.clases li:nth-child(2) a::before { background: var(--orange); }
+  ol.clases li:nth-child(3) a::before { background: var(--navy); }
+  ol.clases a span.go { color: var(--teal); font-size: 14px; font-weight: 700; white-space: nowrap; }
+  ol.clases a:hover { background: var(--bg); }
+  ol.clases a:hover span.go { color: var(--orange); }
+
+  .placeholder { background: var(--white); border: 1px dashed var(--line); padding: 22px 24px; color: var(--gray); }
+
+  footer { margin-top: 48px; background: var(--navy); color: #A9B6C4; padding: 28px 0; font-size: 14px; }
+  footer strong { color: var(--white); }
+
+  @media (max-width: 760px) {
+    body { font-size: 16px; border-left-width: 4px; }
+    .wrap { padding: 0 16px; }
+    header.hero { padding: 40px 0 34px; }
+    .tema-head { grid-template-columns: 1fr; padding: 22px 18px; gap: 6px; }
+    .tema-head .num { font-size: 40px; }
+    .tema-body { grid-template-columns: 1fr; padding: 20px 18px 22px; gap: 22px; }
+    ol.clases a { grid-template-columns: 36px 1fr; }
+    ol.clases a span.go { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">FCE · Universidad Nacional de Tucumán · 2026</p>
+    <h1>Principios de Economía II</h1>
+    <p class="lead">Macroeconomía: la economía como un todo. Acá encontrás las diapositivas de cada clase, las guías de estudio y el material para acompañar el cursado.</p>
+    <div class="rule"></div>
+    <p class="who"><strong>Dra. Emilia Millón</strong> · Cátedra Principios de Economía II</p>
+  </div>
+</header>
+
+<nav class="top" aria-label="Secciones">
+  <div class="wrap">
+    <a href="#temas">Temas</a>
+    <a href="#tema-5">Tema 5</a>
+    <a href="#tema-6">Tema 6</a>
+    <a href="#bibliografia">Bibliografía</a>
+    <a href="#herramientas">Herramientas</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="temas">
+    <h2>Temas del cursado</h2>
+    <p class="sub">El material se va publicando a medida que avanza la cursada.</p>
+
+    <p class="bloque">Bloque I</p>
+    <div class="grid">
+      <article class="card soon"><div class="num">01</div><h3>Surgimiento de la Macroeconomía</h3><p>La economía como un todo, sectores institucionales y la ecuación macroeconómica fundamental.</p><span class="tag">Próximamente</span></article>
+      <article class="card soon"><div class="num">02</div><h3>Modelos</h3><p>Variables económicas, modelo clásico, la crítica de Keynes y el modelo renta-gasto.</p><span class="tag">Próximamente</span></article>
+      <article class="card soon"><div class="num">03</div><h3>Cuentas Nacionales</h3><p>El PBI y sus tres métodos de cálculo, PBI nominal y real, crecimiento.</p><span class="tag">Próximamente</span></article>
+      <article class="card soon"><div class="num">04</div><h3>Problemas macroeconómicos</h3><p>Crecimiento y desarrollo, pobreza, desigualdad y desempleo.</p><span class="tag">Próximamente</span></article>
+    </div>
+
+    <p class="bloque">Bloque II</p>
+    <div class="grid">
+      <article class="card"><div class="num">05</div><h3>Dinero, tipo de cambio, balanza de pagos e inflación</h3><p>Números índices, inflación, sistema monetario y BCRA, tipo de cambio y balanza de pagos.</p><a class="more" href="#tema-5">Ver guía y clases →</a></article>
+      <article class="card"><div class="num">06</div><h3>El rol del Estado</h3><p>Política fiscal y presupuesto; política monetaria, cambiaria y comercial.</p><a class="more" href="#tema-6">Ver guía y clases →</a></article>
+    </div>
+  </section>
+
+  <section id="tema-5">
+    <article class="tema">
+      <div class="tema-head">
+        <div class="num">05</div>
+        <div>
+          <p class="eyebrow">Bloque II · Tema 5</p>
+          <h3>Dinero, Banco Central, tipo de cambio, balanza de pagos e inflación</h3>
+          <p>El dinero no es sólo un medio de pago: su cantidad, su valor frente a otras monedas y la velocidad a la que pierde poder de compra afectan la producción, el empleo y la distribución del ingreso.</p>
+        </div>
+      </div>
+      <div class="tema-body">
+        <div>
+          <h4>Guía de estudio</h4>
+          <a class="btn" href="guias/guia-tema-5.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6zM14 3.5V8h4.5zM8 12v2h8v-2zm0 4v2h8v-2z"/></svg>
+            Descargar guía (PDF)
+          </a>
+          <p class="note">Introducción a la problemática, objetivos, fórmulas, conceptos clave, preguntas guía y lecturas.</p>
+        </div>
+        <div>
+          <h4>Clases</h4>
+          <ol class="clases">
+            <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vQA2bLPlfUMjdoEKC4jqVj6A8C5qu5u4yt-IIjplHzoXzBBSXBFySH_SAt140K0CQ/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank" rel="noopener">Dinero y números índices <span class="go">Ver diapositivas ↗</span></a></li>
+            <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vTsZS4QYshY3lE70bc6ZUINUXG5y9ElP-Ln0dlpL5t5g7_sJlqy8yhe-JiItP2ftw/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank" rel="noopener">Inflación <span class="go">Ver diapositivas ↗</span></a></li>
+            <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vRtMCRRONjSCb491_TICigpbs-Hz4ONt5mzNvdrfzX5Vm7FzGV9j15Of16_n1cg2A/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank" rel="noopener">Sistema monetario y BCRA <span class="go">Ver diapositivas ↗</span></a></li>
+            <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vSC1puADWvcwKKaHi9yCD0OQHPBQFcxrsv6CykWO5A27j-5Hqgiif-6qH3LcYGAeA/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank" rel="noopener">Tipo de cambio y balanza de pagos <span class="go">Ver diapositivas ↗</span></a></li>
+          </ol>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="tema-6">
+    <article class="tema">
+      <div class="tema-head">
+        <div class="num">06</div>
+        <div>
+          <p class="eyebrow">Bloque II · Tema 6</p>
+          <h3>El rol del Estado y la política económica</h3>
+          <p>Cuánto debe intervenir el Estado en la economía, cómo se financia y con qué herramientas es una de las grandes discusiones de la macroeconomía; el presupuesto público es donde esas decisiones se vuelven concretas.</p>
+        </div>
+      </div>
+      <div class="tema-body">
+        <div>
+          <h4>Guía de estudio</h4>
+          <a class="btn" href="guias/guia-tema-6.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6zM14 3.5V8h4.5zM8 12v2h8v-2zm0 4v2h8v-2z"/></svg>
+            Descargar guía (PDF)
+          </a>
+          <p class="note">Introducción a la problemática, objetivos, fórmulas, conceptos clave, preguntas guía y lecturas.</p>
+        </div>
+        <div>
+          <h4>Clases</h4>
+          <ol class="clases">
+            <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vSIYGmEr3wBhnJyim6L-68aQJlvo-S5_8Y1hw6ngCO50hYZKPXmaHlUcc1yQ_C2JQ/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank" rel="noopener">El rol del Estado y la política fiscal <span class="go">Ver diapositivas ↗</span></a></li>
+            <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vTM7Tlb3ykM4YH86fVzasMHLIB8sBgB8KLp9BJ7a2TPINutLZZookX6DFmm-NGvtg/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank" rel="noopener">Política monetaria, cambiaria y comercial <span class="go">Ver diapositivas ↗</span></a></li>
+          </ol>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="bibliografia">
+    <h2>Bibliografía pública</h2>
+    <p class="sub">Notas de cátedra y documentos de libre acceso, organizados por tema.</p>
+    <div class="placeholder">Próximamente.</div>
+  </section>
+
+  <section id="herramientas">
+    <h2>Herramientas del cursado</h2>
+    <p class="sub">Calculadoras y ejercicios interactivos para practicar.</p>
+    <div class="placeholder">Próximamente.</div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Principios de Economía II</strong> · Facultad de Ciencias Económicas · Universidad Nacional de Tucumán · 2026<br>
+    Dra. Emilia Millón
+  </div>
+</footer>
+
+</body>
+</html>
